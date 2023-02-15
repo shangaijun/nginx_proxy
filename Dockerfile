@@ -24,6 +24,7 @@ FROM $IMAGE
 LABEL maintainer='Robert Reiz <reiz@versioneye.com>'
 
 COPY nginx.conf /usr/local/nginx/conf/nginx.conf
+COPY password /usr/local/nginx/conf/password
 COPY --from=builder /usr/local/nginx/sbin/nginx /usr/local/nginx/sbin/nginx
 COPY --from=builder /tini /tini
 ## save apt-get update step
